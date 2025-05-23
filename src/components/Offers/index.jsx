@@ -1,4 +1,4 @@
-import offersData from "../../constant/offersData";
+import offersData from "../../db/offersData";
 
 const Offers = () => (
   <section className="offers">
@@ -9,7 +9,10 @@ const Offers = () => (
         {offersData.map((offer, index) => (
           <article className="offers__card" key={index}>
             <h3 className="offers__card-title">{offer.title}</h3>
-            <p className="offers__card-description">{offer.description}</p>
+            <p className="offers__card-description">
+              {offer.description}
+              <span>{offer.subDescription}</span>
+            </p>
             <button className="offers__card-button">Learn more</button>
           </article>
         ))}

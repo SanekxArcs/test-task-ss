@@ -1,4 +1,4 @@
-import rocket from "../../../assets/icons/rocket.svg";
+import rocket from "../../assets/icons/rocket.svg";
 
 const Footer = () => (
   <footer className="footer">
