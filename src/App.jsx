@@ -1,6 +1,8 @@
 import './App.scss';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import About from './components/About';
+import Offers from './components/Offers';
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <Header />
       <main>
         <div className="combined-sections">
+          <Offers />
+          <About />
         </div>
       </main>
       <Footer />
