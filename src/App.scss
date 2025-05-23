@@ -1,39 +1,183 @@
+$color-pink: #ff70d9; // linear gradient as start color from top left
+$color-yellow: #ebff00; // linear gradient as end color to bottom right && hover has opacity 0.6
+$color-blue: #304571;
+$color-black: #000000;
+$color-white: #ffffff;
 
-.App {
-  text-align: center;
+@mixin max-width-container {
+  max-width: 1248px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@mixin px-to-rem($px, $base-font-size: 16) {
+  font-size: #{$px / $base-font-size}rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@mixin responsive-container-padding($padding-large, $padding-medium, $padding-small) {
+  padding: $padding-large;
+
+  @media (max-width: 992px) {
+    padding: $padding-medium;
+  }
+
+  @media (max-width: 576px) {
+    padding: $padding-small;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@mixin responsive-font-size($font-large, $font-medium, $font-small, $line-large, $line-medium, $line-small) {
+  line-height: $line-large;
+  font-size: $font-large;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @media (max-width: 1200px) {
+    line-height: $line-medium;
+    font-size: $font-medium;
   }
-  to {
-    transform: rotate(360deg);
+
+  @media (max-width: 576px) {
+    line-height: $line-small;
+    font-size: $font-small;
+  }
+}
+
+.header {
+  background: $color-black;
+
+  &__container {
+    @include max-width-container;
+    justify-content: space-between;
+    padding: 24px 91px 21px 81px;
+    align-items: center;
+    position: relative;
+    display: flex;
+
+    @media (max-width: 768px) {
+      padding: 28px 50px 28px 30px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 5px 20px;
+    }
+  }
+
+  &__logo img {
+    max-height: 35px;
+    max-width: 104px;
+
+    @media (max-width: 768px) {
+      max-height: 24px;
+      max-width: 71px;
+    }
+  }
+
+  &__menu-icon {
+    cursor: pointer;
+    display: none;
+
+    @media (max-width: 576px) {
+      display: block;
+    }
+  }
+
+  &__links {
+    align-items: center;
+    display: flex;
+    z-index: 10;
+
+    @media (max-width: 576px) {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      background-color: $color-black;
+      transform: translateX(-10%);
+      flex-direction: column;
+      top: calc(100% + 5px);
+      border-radius: 10px;
+      padding: 10px 20px;
+      position: absolute;
+      text-align: center;
+      display: none;
+      right: 0;
+
+      &--open {
+        display: flex;
+      }
+    }
+  }
+
+  &__link {
+    @include px-to-rem(18);
+    color: $color-white;
+    line-height: 21.6px;
+    position: relative;
+    margin-right: 60px;
+    font-weight: 700;
+
+    &:last-child {
+      margin-right: 0;
+
+      @media (max-width: 576px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:hover {
+      background-image: linear-gradient(98.25deg, #ebff00 18.56%, #ff70d9 76.02%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+      height: 20px;
+      width: 24px;
+
+      svg {
+        transition: opacity 0.3s ease-in-out;
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        top: 0;
+      }
+
+      .cart-icon__default {
+        opacity: 1;
+
+        &:hover {
+          opacity: 0;
+        }
+      }
+
+      .cart-icon__gradient {
+        opacity: 0;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      @include px-to-rem(16);
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  }
+}
+
+.footer {
+  background: $color-black;
+
+  &__container {
+    @include max-width-container;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+  &__text {
+    @include px-to-rem(18);
+    color: $color-yellow;
+    line-height: 28px;
   }
 }
