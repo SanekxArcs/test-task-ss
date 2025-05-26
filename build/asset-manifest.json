@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a51de419.css",
+    "main.js": "/static/js/main.d38950d3.js",
+    "static/media/rocket.svg": "/static/media/rocket.bf2dbb7c0c33ada062ba83af3725edbe.svg",
+    "static/media/Lato-Bold.ttf": "/static/media/Lato-Bold.0baf4e4829ca0a3e1e5c.ttf",
+    "static/media/Lato-ExtraBold.ttf": "/static/media/Lato-ExtraBold.0d13f4b5f45c14cf4d3c.ttf",
+    "static/media/hero-sky.webp": "/static/media/hero-sky.b3fdbdf9f741e910587a.webp",
+    "static/media/offers-fourth.webp": "/static/media/offers-fourth.36c2306321cd1aead05a.webp",
+    "static/media/offers-third.webp": "/static/media/offers-third.bef13437f2a69a121b89.webp",
+    "static/media/offers-second.webp": "/static/media/offers-second.953af704a95a3a850e6c.webp",
+    "static/media/offers-first.webp": "/static/media/offers-first.bdc1a2edd01f685f2ad6.webp",
+    "static/media/earth.webp": "/static/media/earth.a675c1699ab722e9bdbb.webp",
+    "static/media/menu.svg": "/static/media/menu.7e65dcdbfcb4fb7f60ea90f61a0ab5f8.svg",
+    "static/media/x-menu.svg": "/static/media/x-menu.60d4f41347544050a7b9d2915be4e499.svg",
+    "index.html": "/index.html",
+    "main.a51de419.css.map": "/static/css/main.a51de419.css.map",
+    "main.d38950d3.js.map": "/static/js/main.d38950d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a51de419.css",
+    "static/js/main.d38950d3.js"
+  ]
+}
