@@ -1,6 +1,7 @@
 $color-pink: #ff70d9; // linear gradient as start color from top left
 $color-yellow: #ebff00; // linear gradient as end color to bottom right && hover has opacity 0.6
 $color-blue: #304571;
+$color-dark-blue: #0D1E48;
 $color-black: #000000;
 $color-white: #ffffff;
 
@@ -46,7 +47,7 @@ $color-white: #ffffff;
   &__container {
     @include max-width-container;
     justify-content: space-between;
-    padding: 24px 91px 21px 81px;
+    padding: 24px 91px 22px 81px;
     align-items: center;
     position: relative;
     display: flex;
@@ -56,11 +57,11 @@ $color-white: #ffffff;
     }
 
     @media (max-width: 576px) {
-      padding: 5px 20px;
+      padding: 4px 20px;
     }
   }
 
-  &__logo img {
+  &__logo-img {
     max-height: 35px;
     max-width: 104px;
 
@@ -82,19 +83,20 @@ $color-white: #ffffff;
   &__links {
     align-items: center;
     display: flex;
+    
     z-index: 10;
 
     @media (max-width: 576px) {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
       background-color: $color-black;
-      transform: translateX(-10%);
       flex-direction: column;
-      top: calc(100% + 5px);
-      border-radius: 10px;
-      padding: 10px 20px;
+      top: calc(100%);
+      border-radius: 0 0 10px 10px;
+      padding: 40px;
+      gap: 12px;
       position: absolute;
       text-align: center;
       display: none;
+      width: 100svw;
       right: 0;
 
       &--open {
@@ -102,9 +104,17 @@ $color-white: #ffffff;
       }
     }
   }
+  &__cart {
+    padding-top: 5px;
+  }
+
 
   &__link {
     @include px-to-rem(18);
+
+    @media (max-width: 768px) {
+      @include px-to-rem(15);
+    }
     color: $color-white;
     line-height: 21.6px;
     position: relative;
@@ -120,42 +130,11 @@ $color-white: #ffffff;
     }
 
     &:hover {
-      background-image: linear-gradient(98.25deg, #ebff00 18.56%, #ff70d9 76.02%);
+      background-image: linear-gradient(162deg, $color-yellow 18%, $color-pink 76%);
       -webkit-text-fill-color: transparent;
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-    }
-
-    .cart-icon {
-      position: relative;
-      cursor: pointer;
-      height: 20px;
-      width: 24px;
-
-      svg {
-        transition: opacity 0.3s ease-in-out;
-        position: absolute;
-        opacity: 0;
-        left: 0;
-        top: 0;
-      }
-
-      .cart-icon__default {
-        opacity: 1;
-
-        &:hover {
-          opacity: 0;
-        }
-      }
-
-      .cart-icon__gradient {
-        opacity: 0;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
     }
 
     @media (max-width: 576px) {
@@ -166,7 +145,336 @@ $color-white: #ffffff;
   }
 }
 
+.combined-sections {
+  background: linear-gradient(to bottom left, $color-dark-blue, $color-blue);
+}
+
+.hero {
+  background-image: 
+  linear-gradient(
+      to right,
+      rgba(15, 20, 32, 0.79) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("./assets/images/hero-sky.webp");
+  background-position:  center center;
+  background-repeat:  no-repeat;
+  background-size:  cover;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  height: 490px;
+  width: 100%;
+  user-select: none;
+  position: relative;
+
+
+
+  @media (max-width: 992px) {
+    height: 420px;
+  }
+
+  @media (max-width: 576px) {
+    height: 452px;
+  }
+
+  &__container {
+    @include responsive-container-padding(91px 476px 119px 82px, 100px 240px 100px 30px, 250px 34px 44px);
+    @include max-width-container;
+    color: $color-white;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+    @media (min-width: 577px) {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    @include responsive-font-size(4.5rem, 3rem, 2.25rem, 72px, 48px, 36px);
+    margin-bottom: 22px;
+
+    span {
+      color: $color-pink;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__description {
+    @include responsive-font-size(2rem, 1.375rem, 1rem, 38.4px, 26.4px, 19.2px);
+    margin-bottom: 22px;
+
+    span {
+      color: $color-yellow;
+    }
+
+    @media (max-width: 576px) {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__button {
+    @extend .button;
+    transition: background-color 0.3s ease-in-out;
+    background-color: $color-yellow;
+    color: $color-black;
+    padding: 14px 40px;
+
+    @media (max-width: 576px) {
+      @include px-to-rem(16);
+      line-height: 19.2px;
+      padding: 3px 26px;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__image {
+    transform: translateY(-50%) translateX(-5px);
+    position: absolute;
+    width: 327px;
+    right: 85px;
+    top: 50%;
+
+    @media (max-width: 992px) {
+      right: -100px;
+    }
+
+    @media (max-width: 576px) {
+      right: 10px;
+      top: 70px;
+    }
+  }
+}
+
+.offers {
+  &__container {
+    @include max-width-container;
+    padding: 58px 80px;
+
+    @media (max-width: 1200px) {
+      padding: 60px 30px 56px 30px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 50px 20px;
+    }
+  }
+
+  &__title {
+    @include px-to-rem(32);
+    color: $color-white;
+    margin-bottom: 40px;
+    line-height: 38.4px;
+
+    @media (max-width: 1200px) {
+      @include px-to-rem(24);
+      margin-bottom: 30px;
+      line-height: 28.8px;
+    }
+
+    @media (max-width: 768px) {
+      @include px-to-rem(23);
+      line-height: 21.6px;
+    }
+    @media (max-width: 576px) {
+      @include px-to-rem(18);
+    }
+  }
+
+  &__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    display: grid;
+
+    @media (max-width: 1200px) {
+      grid-gap: 30px;
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr; /* Each card occupies the full width of one column */
+    }
+  }
+
+  &__card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    color: $color-white;
+    height: 350px;
+
+    $images: (
+      1: "./assets/images/offers-first.webp",
+      2: "./assets/images/offers-second.webp",
+      3: "./assets/images/offers-third.webp",
+      4: "./assets/images/offers-fourth.webp",
+    );
+
+    @each $index, $image in $images {
+      &:nth-child(#{$index}) {
+        background-image: linear-gradient(
+          to right,
+          rgba(15, 20, 32, 0.79) 0%,
+          rgba(0, 0, 0, 0) 100%
+        ), url("#{$image}");
+        background-position:  center center;
+        background-repeat:  no-repeat;
+        background-size:  cover;
+      }
+    }
+
+    .offers__card-title,
+    .offers__card-description {
+      margin-bottom: 22px;
+    }
+
+    .offers__card-button {
+      @extend .button;
+      transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      border: 2px solid $color-yellow;
+      background-color: transparent;
+      color: $color-yellow;
+      padding: 12px 38px;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    @media (max-width: 992px) {
+      grid-column: auto; 
+    }
+  }
+
+  &__card:nth-child(1),
+  &__card:nth-child(4) {
+    grid-column: 1 / -1;
+
+    .offers__card-title {
+      @include px-to-rem(74);
+      line-height: 74px;
+
+    }
+
+    .offers__card-description {
+      @include px-to-rem(26);
+      line-height: 31.2px;
+    }
+  }
+
+  &__card:nth-child(1) {
+    padding: 35px 385px 37px 35px;
+  }
+
+  &__card:nth-child(4) {
+    padding: 38px 400px 34px 35px;
+  }
+
+  &__card:nth-child(2),
+  &__card:nth-child(3) {
+    grid-column: span 1;
+
+    .offers__card-title {
+      @include px-to-rem(46);
+      line-height: 46px;
+    }
+
+    .offers__card-description {
+      @include px-to-rem(24);
+      line-height: 28.8px;
+    }
+  }
+
+  &__card:nth-child(2) {
+    padding: 50px 160px 34px 35px;
+  }
+
+  &__card:nth-child(3) {
+    padding: 50px 50px 34px 35px;
+
+    .offers__card-title {
+      max-width: 240px;
+    }
+    
+  }
+
+  @media (max-width: 1200px) {
+    &__card:nth-child(3) .offers__card-title {
+      max-width: none;
+    }
+
+    &__card:nth-child(1),
+    &__card:nth-child(2),
+    &__card:nth-child(3),
+    &__card:nth-child(4) {
+      padding: 106px 27px 27px 25px;
+
+      .offers__card-title {
+        @include px-to-rem(40);
+        line-height: 40px;
+      }
+
+      .offers__card-description,
+      .offers__card-button {
+        @include px-to-rem(16);
+        line-height: 19.2px;
+      }
+
+      .offers__card-button {
+        padding: 5px 38px;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    &__card:nth-child(1) .offers__card-description span {
+      display: none;
+    }
+
+    &__card:nth-child(1),
+    &__card:nth-child(4) {
+      grid-column: span 1; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__card:nth-child(3) .offers__card-title {
+      max-width: 240px;
+    
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__card:nth-child(1),
+    &__card:nth-child(2),
+    &__card:nth-child(3),
+    &__card:nth-child(4) {
+      padding-top: 48px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__card:nth-child(1),
+    &__card:nth-child(2),
+    &__card:nth-child(3),
+    &__card:nth-child(4) {
+      padding-top: 88px;
+    }
+  }
+  
+}
+
 .about {
+  user-select: none;
+
+
   &__container {
     @include max-width-container;
     padding: 4px 80px 60px;
@@ -211,6 +519,7 @@ $color-white: #ffffff;
     font-weight: 700;
     line-clamp: 3;
     opacity: 60%;
+    text-wrap: balance; // add balance to user ease to read
 
     @media (max-width: 768px) {
       margin-bottom: 20px;
@@ -259,17 +568,17 @@ $color-white: #ffffff;
 
     &:checked {
       ~ .about__description {
-        -webkit-line-clamp: none; // Remove string limit
+        -webkit-line-clamp: none;
         line-clamp: none;
         overflow: visible;
       }
 
       ~ .about__button .button-text--more {
-        display: none; // Hiding the “Read more”
+        display: none;
       }
 
       ~ .about__button .button-text--less {
-        display: inline-block; // Showing the “Read less”
+        display: inline-block;
       }
     }
   }
@@ -277,6 +586,7 @@ $color-white: #ffffff;
 
 .footer {
   background: $color-black;
+  user-select: none;
 
   &__container {
     @include max-width-container;
@@ -289,4 +599,11 @@ $color-white: #ffffff;
     color: $color-yellow;
     line-height: 28px;
   }
+}
+
+.button {
+  @include px-to-rem(22);
+  border-radius: 100px;
+  line-height: 26.4px;
+  font-weight: 700;
 }
