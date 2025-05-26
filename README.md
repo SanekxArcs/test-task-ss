@@ -2,6 +2,10 @@
 
 This project is a responsive landing page built with React and SCSS, designed as a test task for SoftSwift. It demonstrates modern UI/UX practices, reusable React components, and adaptive layouts for various screen sizes.
 
+## Live Demo
+
+[https://sanekxarcs.github.io/test-task-ss/](https://sanekxarcs.github.io/test-task-ss/)
+
 ## Features
 
 - Responsive layout for desktop, tablet, and mobile
