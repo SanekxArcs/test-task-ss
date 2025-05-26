@@ -6,6 +6,11 @@ This project is a responsive landing page built with React and SCSS, designed as
 
 [https://sanekxarcs.github.io/test-task-ss/](https://sanekxarcs.github.io/test-task-ss/)
 
+## Requirements
+
+- Node.js v23.6.1
+- npm v11.2.0
+
 ## Features
 
 - Responsive layout for desktop, tablet, and mobile
