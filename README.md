@@ -69,8 +69,4 @@ src/
 
 ## Author
 
-Test task completed by [Your Name] for SoftSwift.
-
----
-
-For any questions or feedback, please contact the SoftSwift team.
+Test task completed by Me for SoftSwift.
