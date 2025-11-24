@@ -1,4 +1,4 @@
-# SoftSwift Frontend Test Task
+# SoftSwiss Frontend Test Task
 
 This project is a responsive landing page built with React and SCSS, designed as a test task for SoftSwift. It demonstrates modern UI/UX practices, reusable React components, and adaptive layouts for various screen sizes.
 
